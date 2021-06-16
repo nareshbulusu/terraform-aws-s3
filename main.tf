@@ -10,7 +10,7 @@ locals {
 
 module "kms" {
   count = var.kms_master_key_id == "" ? 1 : 0
-  source = "git@github.com:sede-x/terraform-aws-kms.git?ref=main"
+  source = "git@github.com:nareshbulusu/terraform-aws-kms.git?ref=main"
   environment = var.environment
   alias = var.kms_key_alias != "" ? var.kms_key_alias : "${local.bucket}-key"
   kms_key_description =  var.kms_key_description != "" ? var.kms_key_description : "${local.bucket}-key"
